@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Weather App
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"></link>
+
+    </head>
+    <body>
+        <header>
+            <h1>weather api</h1>
+        </header>
+        <section>
+            <div>
+                <form method="POST">
+                    <input type="text" name="city" placeholder="Enter City Name" required></input>
+                    
+                </form>
+                <div>
+                    <button >Add city</button>
+
+                </div>
+                <div>
+                    {% for x in weather_data%}
+                    {{x.city}}
+                    {{x.temperature}}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+
+</html>
